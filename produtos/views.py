@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from rest_framework import generics
 from produtos.models import Produto
+from produtos.serializers import ProdutoSerializer
 
 # Create your views here.
 def home(request):
@@ -45,3 +47,11 @@ def delete(request, id):
     produto.delete()
     
     return redirect(home)
+
+class ApiProdutoList(generics.ListCreateAPIView):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
+
+class ApiProdutoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Produto.objects.all()
+    serializer_class = ProdutoSerializer
