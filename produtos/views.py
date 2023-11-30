@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from produtos.models import Produto
 from produtos.serializers import ProdutoSerializer
 
@@ -49,6 +50,7 @@ def delete(request, id):
     return redirect(home)
 
 class ApiProdutoList(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
 
