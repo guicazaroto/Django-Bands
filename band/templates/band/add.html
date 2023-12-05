@@ -2,21 +2,17 @@
 
 {% block content %}
 <div class="container">
-    <h1>Add new product</h1>
+    <h1>Add new Band</h1>
 
-    <form action="{% url 'save' %}" method="post">
+    <form action="{% url 'save_band' %}" method="post">
       {% csrf_token %}
       <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" name="nome">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
       </div>
       <div class="mb-3">
-        <label for="preco" class="form-label">Preco</label>
-        <input type="text" class="form-control" id="preco" name="preco">
-      </div>
-      <div class="mb-3">
-        <label for="estoque" class="form-label">Estoque</label>
-        <input type="text" class="form-control" id="estoque" name="estoque">
+        <label for="genre" class="form-label">genre</label>
+        <input type="text" class="form-control" id="genre" name="genre">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

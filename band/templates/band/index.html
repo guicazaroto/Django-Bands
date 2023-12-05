@@ -6,7 +6,7 @@
     <h1>Lista de Bandas </h1>
     
     <div class="py-3 d-flex justify-content-end">
-      <a href="{% url 'add' %}" class="btn btn-primary">Adicionar Bandas</a>
+      <a href="{% url 'add_band' %}" class="btn btn-primary">Adicionar Bandas</a>
     </div>
     <div class="row">
       {% for band in bands %}
@@ -24,7 +24,7 @@
                 Editar
               </a>
               <a
-                 href="{% url 'delete' band.id %}" 
+                 href="{% url 'delete_band' band.id %}" 
                  class="btn btn-danger btn-block">
                  Remover
               </a>
