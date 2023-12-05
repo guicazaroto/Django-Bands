@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'produtos',
     'band',
     'rest_framework',
+    'city',
 ]
 
 MIDDLEWARE = [

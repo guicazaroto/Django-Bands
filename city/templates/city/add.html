@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Add new City</h1>
+
+    <form action="{% url 'save_city' %}" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="state" class="form-label">state</label>
+        <input type="text" class="form-control" id="state" name="state">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

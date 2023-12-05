@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1>Lista de Cidades </h1>
+    
+    <div class="py-3 d-flex justify-content-end">
+      <a href="{% url 'add_city' %}" class="btn btn-primary">Adicionar Cidades</a>
+    </div>
+    <div class="row">
+      {% for c in city %}
+      <div class="col-3">
+        <div class="card mt-3" style="width: 18rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ c.name }}</h5>
+            <p class="card-text">
+              <b>Estado: </b> {{ c.state }}
+            </p>
+            <div class="d-grid gap-2 d-block">
+              <a 
+                href="{% url 'edit_city' c.id %}" 
+                class="btn btn-primary btn-block">
+                Editar
+              </a>
+              <a
+                 href="{% url 'delete_city' c.id %}" 
+                 class="btn btn-danger btn-block">
+                 Remover
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+{% endblock %}
