@@ -18,8 +18,16 @@
               <b>Gênero: </b> {{ band.genre }}
             </p>
             <div class="d-grid gap-2 d-block">
-              <a href="{% url 'edit_band' band.id %}" class="btn btn-primary btn-block">Editar</a>
-              <a href="{% url 'delete' band.id %}" class="btn btn-danger btn-block">Remover</a>
+              <a 
+                href="{% url 'edit_band' band.id %}" 
+                class="btn btn-primary btn-block">
+                Editar
+              </a>
+              <a
+                 href="{% url 'delete' band.id %}" 
+                 class="btn btn-danger btn-block">
+                 Remover
+              </a>
             </div>
           </div>
         </div>
