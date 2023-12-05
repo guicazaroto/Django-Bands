@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Edit Band</h1>
+
+    <form action="{% url 'update_band' band.id %}" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="nome" class="form-label">Name</label>
+        <input type="text" class="form-control" id="nome" name="name" value="{{ band.name }}">
+      </div>
+      <div class="mb-3">
+        <label for="preco" class="form-label">Preco</label>
+        <input type="text" class="form-control" id="preco" name="genre" value="{{ band.genre }}">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

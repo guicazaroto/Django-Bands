@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bandas</title>
-</head>
-<body>
-    <h1>Bandas</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1>Lista de Bandas </h1>
+    
+    <div class="py-3 d-flex justify-content-end">
+      <a href="{% url 'add' %}" class="btn btn-primary">Adicionar Bandas</a>
+    </div>
+    <div class="row">
+      {% for band in bands %}
+      <div class="col-3">
+        <div class="card mt-3" style="width: 18rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ band.name }}</h5>
+            <p class="card-text">
+              <b>Gênero: </b> {{ band.genre }}
+            </p>
+            <div class="d-grid gap-2 d-block">
+              <a href="{% url 'edit_band' band.id %}" class="btn btn-primary btn-block">Editar</a>
+              <a href="{% url 'delete' band.id %}" class="btn btn-danger btn-block">Remover</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+{% endblock %}
