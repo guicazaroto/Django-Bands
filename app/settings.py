@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'band',
     'rest_framework',
     'city',
+    'shows'
 ]
 
 MIDDLEWARE = [

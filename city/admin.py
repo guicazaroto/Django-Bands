@@ -1,6 +1,8 @@
 from django.contrib import admin
-
-# Register your models here.
+from django.contrib.admin import ModelAdmin
 from city.models import City
 
-admin.site.register(City)
+class CityAdmin(ModelAdmin):
+    list_display = ['name', 'state']
+
+admin.site.register(City, CityAdmin)

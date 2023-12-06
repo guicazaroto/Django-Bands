@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1>Lista de Shows</h1>
+    
+    <div class="py-3 d-flex justify-content-end">
+      <a href="{% url 'add_show' %}" class="btn btn-primary">Adicionar Show</a>
+    </div>
+    <div class="row">
+      {% for show in shows %}
+      <div class="col-3">
+        <div class="card mt-3" style="width: 18rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ show.name }}</h5>
+            <p class="card-text">
+                <b>Date: </b> {{ show.date|date:"d/m/Y H:i" }}
+            </p>
+            <p class="card-text">
+                <b>Cidade: </b> {{ show.city }}
+            </p>
+            <p class="card-text">
+                <b>Banda: </b> {{ show.band }}
+            </p>
+            <div class="d-grid gap-2 d-block">
+              <a 
+                href="{% url 'edit_show' show.id %}" 
+                class="btn btn-primary btn-block">
+                Editar
+              </a>
+              <a
+                 href="{% url 'delete_show' show.id %}" 
+                 class="btn btn-danger btn-block">
+                 Remover
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+{% endblock %}
