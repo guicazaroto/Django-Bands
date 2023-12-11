@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
-from city.models import City
+from shows_app.models import Band, City
+
+
+class BandAdmin(ModelAdmin):
+    list_display = ['name', 'genre']
 
 
 class CityAdmin(ModelAdmin):
@@ -8,3 +12,4 @@ class CityAdmin(ModelAdmin):
 
 
 admin.site.register(City, CityAdmin)
+admin.site.register(Band, BandAdmin)

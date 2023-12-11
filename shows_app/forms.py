@@ -1,8 +1,9 @@
 from django import forms
-from .models import Show
 from django.forms.widgets import TextInput, Select
-from city.models import City
-from band.models import Band
+
+from shows_app.models import Band
+from shows_app.models import City
+from .models import Show
 
 
 class ShowForm(forms.ModelForm):
