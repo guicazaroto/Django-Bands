@@ -4,10 +4,11 @@
 
   <div class="container">
     <h1>Lista de Cidades </h1>
-    
+    {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
     <div class="py-3 d-flex justify-content-end">
       <a href="{% url 'add_city' %}" class="btn btn-primary">Adicionar Cidades</a>
     </div>
+    {% endif %}
     <div class="row">
       {% for c in city %}
       <div class="col-3">
@@ -17,6 +18,7 @@
             <p class="card-text">
               <b>Estado: </b> {{ c.state }}
             </p>
+              {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
             <div class="d-grid gap-2 d-block">
               <a 
                 href="{% url 'edit_city' c.id %}" 
@@ -29,6 +31,7 @@
                  Remover
               </a>
             </div>
+              {% endif %}
           </div>
         </div>
       </div>

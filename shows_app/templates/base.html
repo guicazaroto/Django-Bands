@@ -14,6 +14,9 @@
                     <a href="/home" class="navbar-brand d-flex align-items-center">
                         <strong>Shows APP</strong>
                     </a>
+                   {%  if user.is_authenticated %}
+                       <label class="fw-bold text-white"> {{ user.get_username }} </label>
+                   {% endif %}
                 </div>
             </div>
         </header>
