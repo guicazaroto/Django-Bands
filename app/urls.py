@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import RedirectView
 
-from shows_app.views import home_city, edit_city, update_city, add_city, save_city, delete_city
+from shows_app.views import home_city, edit_city, update_city, add_city, save_city, delete_city, home_app
 from shows_app.views import home_show, edit_show, update_show, add_show, save_show, delete_show, ApiShowsList, \
     home_band, \
     edit_band, update_band, add_band, save_band, delete_band
@@ -26,6 +26,7 @@ from shows_app.views import home_show, edit_show, update_show, add_show, save_sh
 urlpatterns = [
     path('', RedirectView.as_view(url='/admin/', permanent=False)),
     path('admin/', admin.site.urls),
+    path('home/', home_app),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     path('shows/', home_show),

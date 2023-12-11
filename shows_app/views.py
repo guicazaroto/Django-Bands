@@ -7,6 +7,10 @@ from rest_framework.permissions import IsAuthenticated
 from shows_app.serializers import ShowSerializer
 
 
+def home_app(request):
+    return render(request, 'home.html')
+
+
 def home_show(request):
     shows = Show.objects.all()
     return render(request, 'shows/index.html', {'shows': shows})
