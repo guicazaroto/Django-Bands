@@ -4,7 +4,7 @@
 
   <div class="container">
     <h1>Lista de Shows</h1>
-    {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
+    {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support" %}
     <div class="py-3 d-flex justify-content-end">
       <a href="{% url 'add_show' %}" class="btn btn-primary">Adicionar Show</a>
     </div>
@@ -24,7 +24,8 @@
             <p class="card-text">
                 <b>Banda: </b> {{ show.band }}
             </p>
-              {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
+          {{ user.groups.all.0.name }}
+              {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support" %}
                 <div class="d-grid gap-2 d-block">
                   <a
                     href="{% url 'edit_show' show.id %}"

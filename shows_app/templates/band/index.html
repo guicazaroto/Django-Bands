@@ -4,7 +4,7 @@
 
   <div class="container">
     <h1>Lista de Bandas </h1>
-    {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
+    {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support" %}
     <div class="py-3 d-flex justify-content-end">
       <a href="{% url 'add_band' %}" class="btn btn-primary">Adicionar Bandas</a>
     </div>
@@ -18,7 +18,7 @@
             <p class="card-text">
               <b>Gênero: </b> {{ band.genre }}
             </p>
-              {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support_tech_1" %}
+              {% if user.groups.all.0.name == "admins" or user.groups.all.0.name == "support" %}
             <div class="d-grid gap-2 d-block">
               <a 
                 href="{% url 'edit_band' band.id %}" 
