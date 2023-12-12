@@ -12,7 +12,7 @@ Trabalho realizado como parte integrante da disciplina **BACKEND PYTHON**!
 ## Colaboradores
 - Guilherme Guimarães
 - Hygor Carvalho da Luz
-- Rafael Lime
+- Rafael Lima
 - José Ricardo Kiniap Soares 
 
 
